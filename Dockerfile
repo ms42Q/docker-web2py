@@ -24,14 +24,15 @@ RUN cd /var/www/ && git clone https://github.com/web2py/web2py.git && \
 
 # configure apache2
 ADD apache-web2py.conf /etc/apache2/sites-available/
-RUN a2ensite apache-web2py
-RUN a2dissite 000-default
-RUN a2enmod wsgi && a2enmod ssl && a2enmod proxy && a2enmod rewrite
+RUN a2ensite apache-web2py && \
+    a2dissite 000-default && \
+    a2enmod wsgi && a2enmod ssl && a2enmod proxy && a2enmod rewrite
 
 ADD docker_entrypoint.sh /var/www/
-RUN chmod o+x /var/www/docker_entrypoint.sh
-RUN mkdir /etc/apache2/ssl
-RUN chown -R www-data:www-data /var/www/
+
+RUN chmod u+x /var/www/docker_entrypoint.sh && \
+    mkdir /etc/apache2/ssl && \
+    chown -R www-data:www-data /var/www/
 
 WORKDIR /var/www/web2py
 
