@@ -37,4 +37,5 @@ RUN chmod u+x /var/www/docker_entrypoint.sh && \
 WORKDIR /var/www/web2py
 
 # start apache2
-CMD /var/www/docker_entrypoint.sh apache2ctl start && tail -F /var/log/apache2/*.log
+ENTRYPOINT ["bash", "/var/www/docker_entrypoint.sh"]
+CMD apache2ctl start && tail -F /var/log/apache2/*.log
