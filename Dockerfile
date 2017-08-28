@@ -35,4 +35,4 @@ RUN chown -R www-data:www-data /var/www/
 WORKDIR /var/www/web2py
 
 # start apache2
-CMD /var/www/docker_entrypoint.sh apachectl -e info -DFOREGROUND
+CMD /var/www/docker_entrypoint.sh apache2ctl start && tail -F /var/log/apache2/*.log

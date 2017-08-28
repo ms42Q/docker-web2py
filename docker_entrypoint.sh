@@ -20,7 +20,7 @@ fi
 if [[ $PW == "admin" ]]; then
     cat >&2 <<-EOT
 
-        WARNING: Using default password "admin". You should run web2py with: -e PW=changeme
+    WARNING: Using default password "admin". You should run web2py with: -e PW=changeme
 
 EOT
 fi
