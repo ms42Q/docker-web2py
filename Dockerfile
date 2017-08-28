@@ -1,4 +1,4 @@
-# Version: 0.0.1
+# Version: 0.0.2
 FROM debian:stable
 MAINTAINER Mark Swillus "mark.swillus@alumni.fh-aachen.de"
 
