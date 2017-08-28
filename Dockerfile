@@ -2,8 +2,6 @@
 FROM debian:stable
 MAINTAINER Mark Swillus "mark.swillus@alumni.fh-aachen.de"
 
-EXPOSE 443 80
-
 ENV PW="admin"
 ENV CERT_SUBJECT="/CN=monitutor.example.com"
 
