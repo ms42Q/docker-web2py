@@ -11,8 +11,9 @@ WORKDIR /var/www
 
 USER root
 
-RUN apt update && \
-    apt install  python-dev python-pip git apache2 libapache2-mod-wsgi -y 
+RUN apt-get update && \
+    apt-get install  python-dev python-pip git apache2 libapache2-mod-wsgi -y && \
+    apt-get clean
 
 # get Web2Py from Github
 RUN cd /var/www/ && git clone https://github.com/web2py/web2py.git && \
