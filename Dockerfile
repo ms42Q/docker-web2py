@@ -1,4 +1,4 @@
-# Version: 0.0.2
+# Version: 0.0.3
 FROM debian:stable
 MAINTAINER Mark Swillus "mark.swillus@alumni.fh-aachen.de"
 
@@ -17,7 +17,7 @@ RUN apt-get update && \
 RUN cd /var/www/ && git clone https://github.com/web2py/web2py.git && \
     cd web2py && \
     git submodule update --init --recursive && \
-    git checkout 7e96ecafd720a2179da8ec3dbb3d14fb2b3f8da0 && \
+    git checkout 285013a64a12d5fcb353c8a8587d9ad4e806cac7 && \
     cd .. && \
 	mv web2py/handlers/wsgihandler.py web2py/wsgihandler.py && \
     chown -R www-data:www-data web2py
